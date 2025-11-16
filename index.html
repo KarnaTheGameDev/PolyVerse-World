@@ -63,6 +63,8 @@
         productName: "DefiBank",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
+        // Keep the WebGL render target matched to the canvas DOM size so resizing is consistent
+        matchWebGLToCanvasSize: true,
         // errorHandler: function(err, url, line) {
         //    alert("error " + err + " occurred at line " + line);
         //    // Return 'true' if you handled this error and don't want Unity
@@ -103,9 +105,9 @@
 
 
       } else {
-        // Desktop style: Render the game canvas in a window that can be maximized to fullscreen:
-        canvas.style.width = "960px";
-        canvas.style.height = "600px";
+        // Desktop style: Render the game canvas to fill the browser window
+        canvas.style.width = "100%";
+        canvas.style.height = "100%";
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
